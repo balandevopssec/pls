@@ -2,17 +2,17 @@ folder("$BUName"){}
 folder("$BUName/$ProductName"){}
 pipelineJob("$BUName/$ProductName/CICD_$AppName"){
     parameters{
-        stringParam("$ApplicationRepo","AppRepo","Git URL")
-        stringParam("$AppName", "AppName", "Application Name")
-        stringParam("$UnitTestRun", "UnitTestTool", "")
-        stringParam("$NodeName", "NodeName", "")
+        stringParam("ApplRepo","$ApplicationRepo","Git URL")
+        stringParam("AppName", "$AppName", "Application Name")
+        stringParam("UnitTestTool", "$UnitTestRun", "")
+        stringParam("NodeName", "$NodeName", "")
 
         activeChoiceParam('Branch'){
             description('Select the Branch')
             filterable()
             choiceType('SINGLE_SELECT')
             groovyScript{
-                script('"master", "develop"')
+                script('["master", "develop"]')
                 fallbackScript('"Fallback choice"')
             }
         }
