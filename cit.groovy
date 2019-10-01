@@ -1,6 +1,6 @@
 node("$NodeName"){
 
-    def wrks = env.WORKSPACE
+    wrks = env.WORKSPACE
     stage("Prepare"){
         println("Preparing...")
         git(
