@@ -2,7 +2,7 @@ folder("$BUName"){}
 folder("$BUName/$ProductName"){}
 pipelineJob("$BUName/$ProductName/CICD_$AppName"){
     parameters{
-        stringParam("ApplRepo","$ApplicationRepo","Git URL")
+        stringParam("AppRepo","$ApplicationRepo","Git URL")
         stringParam("AppName", "$AppName", "Application Name")
         stringParam("UnitTestTool", "$UnitTestRun", "")
         stringParam("NodeName", "$NodeName", "")
